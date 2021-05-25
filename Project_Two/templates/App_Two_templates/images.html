@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Images</title>
+</head>
+<body>
+    <h1>Picture of a raven | {{ insert_images }}</h1>
+    <img src="{% static 'images/raven.jpg' %}" alt="Nothing to see her!">
+</body>
+</html>

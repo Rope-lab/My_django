@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'help$', views.help, name='help'),
+    url(r'images$', views.images, name='images'),
 ]
