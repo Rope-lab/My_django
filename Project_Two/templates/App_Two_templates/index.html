@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+{% load replace %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +26,7 @@
      {% for item in wbp %}
      <td>{{item.topic__top_name}}</td>
      <td>{{item.name}}</td>
-     <td>{{item.url|urlize}}</td>
+     <td>{{item.url|replace}}</td>
      <td>{{item.accessrecord__date|date:"M d Y"}}</td>
  </tr>
      {% endfor %}
