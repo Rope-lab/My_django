@@ -1,12 +1,37 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Index</title>
 </head>
 <body>
-    <h1>Index.html</h1>
+    
+{% if wbp %}
+ <table>
+    <tr>
+        <th colspan="4"><h1>Webpages</h1></th>
+    </tr>
+     <tr>
+         <th><h2>Topic</h2></th>
+         <th><h2>Author</h2></th>
+         <th><h2>Site name</h2></th>
+         <th><h2>Date accessed</h2></th>
+     </tr>
+ <tr>
+     {% for item in wbp %}
+     <td>{{item.topic__top_name}}</td>
+     <td>{{item.name}}</td>
+     <td>{{item.url|urlize}}</td>
+     <td>{{item.accessrecord__date|date:"M d Y"}}</td>
+ </tr>
+     {% endfor %}
+</table>
+{% else %}
+ <h1>No Data</h1>
+{% endif %}
 </body>
 </html>
